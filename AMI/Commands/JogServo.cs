@@ -72,7 +72,7 @@ namespace AMI.Commands
 
         public void WriteXml(XmlWriter writer)
         {
-            writer.WriteStartElement("ServoJog");
+            writer.WriteStartElement("JogServo");
             {
                 var map = EnumCodeDictionary<Jog>.Forward;
                 writer.WriteAttributeString("jog", map[Jog]);

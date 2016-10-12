@@ -8,12 +8,12 @@ namespace AMI.Commands
     public partial struct ModeAVC
     {
         public readonly Mode Type;
-        public readonly Bool State;
+        public readonly Kind State;
         public readonly Servo Servo;
 
         private ModeAVC(
             Mode mode,
-            Bool state,
+            Kind state,
             Servo servo)
         {
             Type = mode;
@@ -21,9 +21,21 @@ namespace AMI.Commands
             Servo = servo;
         }
 
-        public static ModeAVC GetSeqMode()
+        public static ModeAVC Off()
         {
-            return new ModeAVC(Mode.CONTINUOUS, Bool.TRUE, Servo.WIREFEED);
+            return new ModeAVC(Mode.AVC_MODE, Kind.OFF, Servo.AVC);
+        }
+        public static ModeAVC Continuous()
+        {
+            return new ModeAVC(Mode.AVC_MODE, Kind.CONTINUOUS, Servo.AVC);
+        }
+        public static ModeAVC SamplingPrimary()
+        {
+            return new ModeAVC(Mode.AVC_MODE, Kind.SAMPLING_PRIMARY, Servo.AVC);
+        }
+        public static ModeAVC SamplingBackground()
+        {
+            return new ModeAVC(Mode.AVC_MODE, Kind.SAMPLING_BACKGROUND, Servo.AVC);
         }
     }
 }

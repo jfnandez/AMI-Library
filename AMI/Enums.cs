@@ -40,10 +40,13 @@
     };
     public enum Parameter
     {
-        [EnumCodeAttribute("GasFlow")]
+        [EnumCodeAttribute("Gas Flow")]
         GAS_FLOW,
 
-        [EnumCodeAttribute("HeatInput")]
+        //[EnumCodeAttribute("Head Pos")]
+        //HEAD_POSITION,
+
+        [EnumCodeAttribute("Heat Input")]
         HEAT_INPUT
     };
     public enum Servo
@@ -77,6 +80,12 @@ namespace AMI.Commands
     {
         public enum Mode
         {
+            [EnumCodeAttribute("AVC_MODE")]
+            AVC_MODE
+        }
+
+        public enum Kind
+        {
             [EnumCodeAttribute("AVC_OFF")]
             OFF,
 
@@ -93,6 +102,12 @@ namespace AMI.Commands
     public partial struct ModePulse
     {
         public enum Mode
+        {
+            [EnumCodeAttribute("PULSE_MODE")]
+            PULSE_MODE
+        }
+
+        public enum Kind
         {
             [EnumCodeAttribute("PULSE_ON")]
             ON,
@@ -126,36 +141,36 @@ namespace AMI.Commands
             [EnumCodeAttribute("MAN_DEADV")]
             MANUAL_DEADVANCE,
 
-            [EnumCodeAttribute("CLEAR_FAULTS")]//confirmar
-            CLEAR_FAULTS
+            [EnumCodeAttribute("CLEAR_FAULT")]
+            CLEAR_FAULT
         };
     }
     public partial struct ModeServo
     {
         public enum Mode
         {
-            [EnumCodeAttribute("WIRE_AUTO")]
-            WIREFEED_AUTO,
+            [EnumCodeAttribute("OSC_MAN")]
+            OSCILLATION_MANUAL,
 
             [EnumCodeAttribute("TVL_CW")]
             TRAVEL_CLOCKWISE,
 
-            [EnumCodeAttribute("OSC_MAN")]
-            OSCILLATION_MANUAL
+            [EnumCodeAttribute("WIRE_AUTO")]
+            WIREFEED_AUTOMATIC
         };
     }
     public partial struct ModeSystem
     {
         public enum Mode
         {
-            [EnumCodeAttribute("WELD_MODE")]
-            WELD_MODE,
+            [EnumCodeAttribute("LAMPS_ON")]
+            LAMPS_ON,
 
             [EnumCodeAttribute("MAN_PURGE_ON")]
-            MANUAL_PURGE,
+            PURGE_MANUAL,
 
-            [EnumCodeAttribute("LAMPS_ON")]
-            OSC,
+            [EnumCodeAttribute("WELD_MODE")]
+            WELD_MODE
         };
 
     }
@@ -163,17 +178,12 @@ namespace AMI.Commands
     {
         public enum Mode
         {
-            [EnumCodeAttribute("OFF")]
-            OFF,
+            [EnumCodeAttribute("TRAVEL_MODE")]
+            TRAVEL_MODE
+        }
 
-            [EnumCodeAttribute("STEP")]
-            STEP,
-
-            [EnumCodeAttribute("EXT")]
-            EXTERN,
-
-            [EnumCodeAttribute("CONT")]
-            CONTINUOUS
+        public enum Kind
+        {
         };
     }
 }
@@ -187,59 +197,59 @@ namespace AMI.Commands.Reply
 
         [EnumCodeAttribute("\"0x01\"")]
         INVALID_COMMAND_TYPE,
-				
+
         [EnumCodeAttribute("\"0x02\"")]
         INVALID_COMMAND_SYNTAX,
-		
-		[EnumCodeAttribute("\"0x08\"")]
-        SCHEDULE_NOT_LOADED,   
-		
-		[EnumCodeAttribute("\"0x09\"")]
-	    SYSTEM_FAULT_PRESENT,
-		
-		[EnumCodeAttribute("\"0x0A\"")]
-		SYSTEM_IN_SEQUENCE,
-		
-		[EnumCodeAttribute("\"0x0B\"")]
-		SYSTEM_NOT_WELDING,
-		
-		[EnumCodeAttribute("\"0x0C\"")]
-		SYSTEM_IN_ALREADY_DOWNSLOPE,
-		
-		[EnumCodeAttribute("\"0x10\"")]
-		INVALID_STATE_COMMAND,
-		
-		[EnumCodeAttribute("\"0x20\"")]
-		INVALID_STATE_SERVO_NAME,
-		
-		[EnumCodeAttribute("\"0x21\"")]
-		INVALID_COMMAND_FOR_NAMED_SERVO,
-		
-		[EnumCodeAttribute("\"0x30\"")]
-		INVALID_DURATION_PARAMETER,
-		
-		[EnumCodeAttribute("\"0x40\"")]
-		INVALID_MANIPULATOR_NUMBER,
-		
-		[EnumCodeAttribute("\"0x50\"")]
-		INVALID_LEVEL_VALUE,
-		
-		[EnumCodeAttribute("\"0x51\"")]
-		INVALID_OVERRIDE_TYPE,
-		
-		[EnumCodeAttribute("\"0x52\"")]
-		VALUE_OUTSIDE_ALLOWABLE_RANGE,
-		
-		[EnumCodeAttribute("\"0x53\"")]
-		VALUE_ALREADY_AT_LIMIT,
-		
-		[EnumCodeAttribute("\"0x60\"")]
-		INVALID_GROUP_NAME,
-		
-		[EnumCodeAttribute("\"0x61\"")]
-		INVALID_SCHEDULE_NAME,
-		
-		[EnumCodeAttribute("\"0x62\"")]
-		INVALID_PASS_NUMBER		
+
+        [EnumCodeAttribute("\"0x08\"")]
+        SCHEDULE_NOT_LOADED,
+
+        [EnumCodeAttribute("\"0x09\"")]
+        SYSTEM_FAULT_PRESENT,
+
+        [EnumCodeAttribute("\"0x0A\"")]
+        SYSTEM_IN_SEQUENCE,
+
+        [EnumCodeAttribute("\"0x0B\"")]
+        SYSTEM_NOT_WELDING,
+
+        [EnumCodeAttribute("\"0x0C\"")]
+        SYSTEM_IN_ALREADY_DOWNSLOPE,
+
+        [EnumCodeAttribute("\"0x10\"")]
+        INVALID_STATE_COMMAND,
+
+        [EnumCodeAttribute("\"0x20\"")]
+        INVALID_STATE_SERVO_NAME,
+
+        [EnumCodeAttribute("\"0x21\"")]
+        INVALID_COMMAND_FOR_NAMED_SERVO,
+
+        [EnumCodeAttribute("\"0x30\"")]
+        INVALID_DURATION_PARAMETER,
+
+        [EnumCodeAttribute("\"0x40\"")]
+        INVALID_MANIPULATOR_NUMBER,
+
+        [EnumCodeAttribute("\"0x50\"")]
+        INVALID_LEVEL_VALUE,
+
+        [EnumCodeAttribute("\"0x51\"")]
+        INVALID_OVERRIDE_TYPE,
+
+        [EnumCodeAttribute("\"0x52\"")]
+        VALUE_OUTSIDE_ALLOWABLE_RANGE,
+
+        [EnumCodeAttribute("\"0x53\"")]
+        VALUE_ALREADY_AT_LIMIT,
+
+        [EnumCodeAttribute("\"0x60\"")]
+        INVALID_GROUP_NAME,
+
+        [EnumCodeAttribute("\"0x61\"")]
+        INVALID_SCHEDULE_NAME,
+
+        [EnumCodeAttribute("\"0x62\"")]
+        INVALID_PASS_NUMBER
     }
 }

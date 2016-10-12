@@ -21,9 +21,29 @@ namespace AMI.Commands
             Servo = servo;
         }
 
-        public static ModeServo GetSeqMode()
+        public static ModeServo OscillationManualOn()
         {
-            return new ModeServo(Mode.ALL_STOP, Bool.TRUE, Servo.WIREFEED);
+            return new ModeServo(Mode.OSCILLATION_MANUAL, Bool.TRUE, Servo.OSCILLATION);
+        }
+        public static ModeServo OscillationManualOff()
+        {
+            return new ModeServo(Mode.OSCILLATION_MANUAL, Bool.FALSE, Servo.OSCILLATION);
+        }
+        public static ModeServo WirefeedAutomaticOn()
+        {
+            return new ModeServo(Mode.WIREFEED_AUTOMATIC, Bool.TRUE, Servo.WIREFEED);
+        }
+        public static ModeServo WirefeedAutomaticOff()
+        {
+            return new ModeServo(Mode.WIREFEED_AUTOMATIC, Bool.FALSE, Servo.WIREFEED);
+        }
+        public static ModeServo TravelClockwise()
+        {
+            return new ModeServo(Mode.TRAVEL_CLOCKWISE, Bool.TRUE, Servo.TRAVEL);
+        }
+        public static ModeServo TravelCounterClockwise()
+        {
+            return new ModeServo(Mode.TRAVEL_CLOCKWISE, Bool.FALSE, Servo.TRAVEL);
         }
     }
 

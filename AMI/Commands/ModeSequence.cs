@@ -22,21 +22,21 @@ namespace AMI.Commands
         {
             return new ModeSequence(Mode.STOP);
         }
-        public static ModeSequence AllStop()
+        public static ModeSequence StopAll()
         {
             return new ModeSequence(Mode.ALL_STOP);
         }
-        public static ModeSequence ManualAdvance()
+        public static ModeSequence LevelIncrease()
         {
             return new ModeSequence(Mode.MANUAL_ADVANCE);
         }
-        public static ModeSequence ManualDeadvance()
+        public static ModeSequence LevelDecrease()
         {
             return new ModeSequence(Mode.MANUAL_DEADVANCE);
         }
-        public static ModeSequence ClearFaults()
+        public static ModeSequence ClearFault()
         {
-            return new ModeSequence(Mode.CLEAR_FAULTS);
+            return new ModeSequence(Mode.CLEAR_FAULT);
         }
     }
 

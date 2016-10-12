@@ -16,29 +16,29 @@ namespace AMI.Commands
             State = state;
         }
 
-        public static ModeSystem LampsOn()
+        public static ModeSystem WeldMode()
         {
-            return new ModeSystem(Mode.LAMPS, Bool.TRUE);
+            return new ModeSystem(Mode.WELD_MODE, Bool.TRUE);
         }
-        public static ModeSystem LampsOff()
+        public static ModeSystem TestMode()
         {
-            return new ModeSystem(Mode.LAMPS, Bool.FALSE);
+            return new ModeSystem(Mode.WELD_MODE, Bool.FALSE);
         }
         public static ModeSystem PurgeManualOn()
         {
-            return new ModeSystem(Mode.PURGE, Bool.FALSE);
+            return new ModeSystem(Mode.PURGE_MANUAL, Bool.TRUE);
         }
         public static ModeSystem PurgeManualOff()
         {
-            return new ModeSystem(Mode.PURGE, Bool.FALSE);
+            return new ModeSystem(Mode.PURGE_MANUAL, Bool.FALSE);
         }
-        public static ModeSystem OscillationAutoOn()
+        public static ModeSystem LampsOn()
         {
-            return new ModeSystem(Mode.OSC, Bool.FALSE);
+            return new ModeSystem(Mode.LAMPS_ON, Bool.TRUE);
         }
-        public static ModeSystem OscillationAutoOff()
+        public static ModeSystem LampsOff()
         {
-            return new ModeSystem(Mode.OSC, Bool.FALSE);
+            return new ModeSystem(Mode.LAMPS_ON, Bool.FALSE);
         }
     }
 
